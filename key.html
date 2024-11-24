@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/1520/PNG/512/keyboardbasicflat_106016.png" type="image/x-icon">
+  <title>A S D - Q W E</title>
+
+  <style>
+    #key {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="key"></div>
+
+  <script>
+    let color = "";
+  
+    document.addEventListener("keydown", function (event) {
+      const keyDiv = document.getElementById("key");
+
+      if (event.key === "a") {
+        color = "pink";
+        keyDiv.style.backgroundColor = color;
+      } else if (event.key === "s") {
+        color = "orange";
+        keyDiv.style.backgroundColor = color;
+      } else if (event.key === "d") {
+        color = "lightblue";
+        keyDiv.style.backgroundColor = color;
+      }
+
+      if (event.key === "q") {
+        crearDiv("purple");
+      } else if (event.key === "w") {
+        crearDiv("gray");
+      } else if (event.key === "e") {
+        crearDiv("brown");
+      }
+    });
+
+    function crearDiv(color) {
+      const newDiv = document.createElement("div");
+      newDiv.style.width = "200px";
+      newDiv.style.height = "200px";
+      newDiv.style.backgroundColor = color;
+      newDiv.style.border = "1px solid black";
+      document.body.appendChild(newDiv);
+    }
+  </script>
+
+</body>
+
+</html>
